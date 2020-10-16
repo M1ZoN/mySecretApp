@@ -71,7 +71,7 @@ passport.deserializeUser((id, done) => {
 passport.use(new GoogleStrategy({
 	clientID: process.env.CLIENT_ID,
 	clientSecret: process.env.CLIENT_SECRET,
-	callbackURL: "http://localhost:3000/auth/google/secrets",
+	callbackURL: "https://mywhisper-app.herokuapp.com/auth/google/secrets",
 	userProfileURL: "https://www.googleapis.com/oauth2/v3/userinfo"
 	},
 	(accessToken, refreshToken, profile, cb) => {
@@ -84,7 +84,7 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
 	clientID: process.env.FACEBOOK_APPID,
 	clientSecret: process.env.FACEBOOK_SECRET,
-	callbackURL: "http://localhost:3000/auth/facebook/secrets",
+	callbackURL: "https://mywhisper-app.herokuapp.com/auth/facebook/secrets",
 	profileFields: ["id", "email"]
 },
 (accessToken, refreshToken, profile, done) => {
